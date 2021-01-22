@@ -1,4 +1,4 @@
-Function Get-UninstallStrings {
+Function Get-SoftwareUninstallStrings {
 <#
   .SYNOPSIS
   .DESCRIPTION
