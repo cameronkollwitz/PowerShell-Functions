@@ -1,5 +1,5 @@
 Function Enable-ADComputerRemoteRegistry {
-  #requires -RunAsAdministrator
+  #NOTNEEDED requires -RunAsAdministrator
   #requires -Version 3.0
 
   <#
