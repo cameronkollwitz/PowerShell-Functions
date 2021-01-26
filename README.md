@@ -4,6 +4,10 @@ My PowerShell Functions.
 
 ## Functions
 
+### Add-ADUserAcl
+
+TBW.
+
 ### Enable-ADComputerRemoteRegistry
 
 TBW.
@@ -16,7 +20,11 @@ TBW.
 
 TBW.
 
-### Get-ADGroupMemberChanges
+### Get-ADComputerRemoteTime
+
+TBW.
+
+### Get-ADUserFromSid
 
 TBW.
 
@@ -28,11 +36,27 @@ TBW.
 
 TBW.
 
+### Get-CMDistributionPoints
+
+TBW.
+
 ### Get-CMTaskSequenceStatus
 
 TBW.
 
+### Get-EpochDate
+
+TBW.
+
+### Get-NetworkConfiguration
+
+TBW.
+
 ### Get-RRASFarm
+
+TBW.
+
+### Get-SoftwareUninstallStrings
 
 TBW.
 
@@ -48,11 +72,11 @@ TBW.
 
 TBW.
 
-### Invoke-MSIntuneDriverUpdate
+### Get-MWMTraceRoute
 
 TBW.
 
-### Invoke-MSIntuneMDMReenrollment
+### New-CMSession
 
 TBW.
 
@@ -60,15 +84,11 @@ TBW.
 
 TBW.
 
-### New-ScheduledTaskScript
+### Register-PSRepositoryFix
 
 TBW.
 
-### Remove-ADComputerUserProfile
-
-TBW.
-
-### Reset-DellTPMOwner
+### Reset-DellTpmOwner
 
 #### SYNOPSIS
 
@@ -82,7 +102,19 @@ Used to reset the TPM Ownership of a device using Microsoft APIs
 
 Reset-DellTPMOwner
 
+### Reset-WindowsUpdate
+
+TBW.
+
 ### Set-AutopilotAssignDeviceToUser
+
+TBW.
+
+### Set-LocalAdministratorTask
+
+TBW.
+
+### Test-PSModule
 
 TBW.
 
