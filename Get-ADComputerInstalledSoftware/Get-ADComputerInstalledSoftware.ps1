@@ -4,7 +4,7 @@ Function Get-ADComputerInstalledSoftware {
       Get-ADComputerInstalledSoftware retrieves a list of installed software
 
     .DESCRIPTION
-      Get-ADComputerInstalledSoftware opens up the specified (remote) registry and scours it for installed software. When found it returns a list of the software and it's version.
+      Get-ADComputerInstalledSoftware opens up the specified (remote) registry and scours it for installed software. When found it returns a list of the software and its version.
 
     .PARAMETER ComputerName
       The computer from which you want to get a list of installed software. Defaults to the local host.
@@ -53,9 +53,9 @@ Function Get-ADComputerInstalledSoftware {
   )
 
   Begin {
-    $lmKeys = "Software\Microsoft\Windows\CurrentVersion\Uninstall", "SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
+    $lmKeys = 'Software\Microsoft\Windows\CurrentVersion\Uninstall', 'SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall'
     $lmReg = [Microsoft.Win32.RegistryHive]::LocalMachine
-    $cuKeys = "Software\Microsoft\Windows\CurrentVersion\Uninstall"
+    $cuKeys = 'Software\Microsoft\Windows\CurrentVersion\Uninstall'
     $cuReg = [Microsoft.Win32.RegistryHive]::CurrentUser
   }
   Process {
@@ -71,14 +71,14 @@ Function Get-ADComputerInstalledSoftware {
       ForEach ($subName in $regKey.GetSubkeyNames()) {
         ForEach ($sub in $regKey.OpenSubkey($subName)) {
           $masterKeys += (New-Object PSObject -Property @{
-              "ComputerName"     = $Name
-              "Name"             = $sub.getvalue("displayname")
-              "SystemComponent"  = $sub.getvalue("systemcomponent")
-              "ParentKeyName"    = $sub.getvalue("parentkeyname")
-              "Version"          = $sub.getvalue("DisplayVersion")
-              "UninstallCommand" = $sub.getvalue("UninstallString")
-              "InstallDate"      = $sub.getvalue("InstallDate")
-              "RegPath"          = $sub.ToString()
+              'ComputerName'     = $Name
+              'Name'             = $sub.getvalue('displayname')
+              'SystemComponent'  = $sub.getvalue('systemcomponent')
+              'ParentKeyName'    = $sub.getvalue('parentkeyname')
+              'Version'          = $sub.getvalue('DisplayVersion')
+              'UninstallCommand' = $sub.getvalue('UninstallString')
+              'InstallDate'      = $sub.getvalue('InstallDate')
+              'RegPath'          = $sub.ToString()
             })
         }
       }
@@ -89,20 +89,20 @@ Function Get-ADComputerInstalledSoftware {
         ForEach ($subName in $regKey.getsubkeynames()) {
           ForEach ($sub in $regKey.opensubkey($subName)) {
             $masterKeys += (New-Object PSObject -Property @{
-                "ComputerName"     = $Name
-                "Name"             = $sub.getvalue("displayname")
-                "SystemComponent"  = $sub.getvalue("systemcomponent")
-                "ParentKeyName"    = $sub.getvalue("parentkeyname")
-                "Version"          = $sub.getvalue("DisplayVersion")
-                "UninstallCommand" = $sub.getvalue("UninstallString")
-                "InstallDate"      = $sub.getvalue("InstallDate")
-                "RegPath"          = $sub.ToString()
+                'ComputerName'     = $Name
+                'Name'             = $sub.getvalue('displayname')
+                'SystemComponent'  = $sub.getvalue('systemcomponent')
+                'ParentKeyName'    = $sub.getvalue('parentkeyname')
+                'Version'          = $sub.getvalue('DisplayVersion')
+                'UninstallCommand' = $sub.getvalue('UninstallString')
+                'InstallDate'      = $sub.getvalue('InstallDate')
+                'RegPath'          = $sub.ToString()
               })
           }
         }
       }
     }
-    $woFilter = { $null -ne $_.name -AND $_.SystemComponent -ne "1" -AND $null -eq $_.ParentKeyName }
+    $woFilter = { $null -ne $_.name -AND $_.SystemComponent -ne '1' -AND $null -eq $_.ParentKeyName }
     $props = 'Name', 'Version', 'ComputerName', 'Installdate', 'UninstallCommand', 'RegPath'
     $masterKeys = ($masterKeys | Where-Object $woFilter | Select-Object $props | Sort-Object Name)
     $masterKeys
@@ -110,5 +110,5 @@ Function Get-ADComputerInstalledSoftware {
   End {
     Out-Null
   }
-#endregion
+  #endregion
 }

@@ -4,7 +4,7 @@ Function Invoke-MWMTraceRoute {
     Perform a Traceroute on a host using PowerShell.
 
   .DESCRIPTION
-    Utiliz the .NET Framework to implement a "Mid-Wage-Man's Traceroute" using PowerShell.
+    Utilize the .NET Framework to implement a "Mid-Wage-Man's Traceroute" using PowerShell.
 
   .LINK
     https://stackoverflow.com/questions/32434882/is-there-a-powershell-equivalent-tracert-that-works-in-version-2
