@@ -29,12 +29,12 @@ Function New-CMRandomMemberCollection () {
       ValueFromPipeline = $False,
       ValueFromPipelineByPropertyName = $False,
       HelpMessage = 'What site server would you like to connect to?')]
-    [string]$Server = 'CONFIGMANAGER',
+    [string]$Server = 'CM01',
     [Parameter(Mandatory = $False,
       ValueFromPipeline = $False,
       ValueFromPipelineByPropertyName = $False,
       HelpMessage = 'What site does your ConfigMgr site server exist in?')]
-    [string]$Site = 'UHP',
+    [string]$Site = 'KWZ',
     [Parameter(Mandatory = $True,
       ValueFromPipeline = $True,
       ValueFromPipelineByPropertyName = $True,
